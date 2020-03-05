@@ -308,6 +308,9 @@ debug.stagefright.omx_default_rank=0
 ro.vendor.se.type=HCE,UICC
 ro.vendor.nfc.repair=1
 
+# Netflix
+ro.netflix.bsp_rev=Q4350-32962-1
+
 # Radio
 keyguard.no_require_sim=true
 persist.radio.multisim.config=dsds
