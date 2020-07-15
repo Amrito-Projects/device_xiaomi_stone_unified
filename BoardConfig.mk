@@ -139,6 +139,9 @@ endif
 #Force prebuilt kernel
 INLINE_KERNEL_PREBUILT := true
 
+# Allow LZ4 compression
+BOARD_RAMDISK_USE_LZ4 := true
+
 # Media
 TARGET_USES_ION := true
 TARGET_DISABLED_UBWC := true
