@@ -60,4 +60,7 @@
         <item>0</item>
     </integer-array>
 
+    <!-- Update battery info every second when device is charging -->
+    <bool name="config_alternateFastchargeInfoUpdate">true</bool>
+
 </resources>
