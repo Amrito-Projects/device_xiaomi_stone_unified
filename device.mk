@@ -4,8 +4,16 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Call the MiuiCamera setup
+$(call inherit-product-if-exists, vendor/xiaomi/stone-miuicamera/products/miuicamera.mk)
+
+# Call the ViperFX Config
+$(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
+
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -87,6 +95,11 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration_7_0.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := $(TARGET_SCREEN_WIDTH)
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti \
@@ -113,6 +126,10 @@ PRODUCT_PACKAGES += \
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
+
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Dex
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -247,6 +264,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     IFAAService
 
+# Init scripts
+PRODUCT_PACKAGES += \
+    init.xiaomi.rc
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
@@ -309,6 +330,25 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.mlipay@1.1.vendor \
     vendor.xiaomi.hardware.mtdservice@1.0.vendor
 
+# NFC
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service.st \
+    com.android.nfc_extras \
+    libchrome.vendor \
+    NfcNci \
+    SecureElement \
+    Tag
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
+    frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
@@ -329,7 +369,16 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # RRO Overlays
 PRODUCT_PACKAGES += \
-    NfcOverlay
+    NfcOverlay \
+    FrameworksResOverlayStone \
+    SettingsOverlayStone \
+    SystemUIOverlayStone \
+    StoneCNSettingsProviderOverlay \
+    StoneCNWifiOverlay \
+    StoneGLSettingsProviderOverlay\
+    StoneGLWifiOverlay \
+    StoneINSettingsProviderOverlay \
+    StoneINWifiOverlay
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -569,5 +618,5 @@ PRODUCT_PACKAGES += \
     product_charger_res_images \
     product_charger_res_images_vendor
 
-# Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/sm6375-common/sm6375-common-vendor.mk)
+# Inherit from vendor blobs
+$(call inherit-product, vendor/xiaomi/stone/stone-vendor.mk)
