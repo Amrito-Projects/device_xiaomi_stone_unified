@@ -611,6 +611,11 @@ PRODUCT_COPY_FILES += \
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend \
+    charger_res_images
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
@@ -627,11 +632,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
-
-# Charger
-PRODUCT_PACKAGES += \
-    product_charger_res_images \
-    product_charger_res_images_vendor
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/stone/stone-vendor.mk)
