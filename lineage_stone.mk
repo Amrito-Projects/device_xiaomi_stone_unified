@@ -29,13 +29,7 @@ PRODUCT_NAME := lineage_stone
 PRODUCT_DEVICE := stone
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := holi
 
 BUILD_FINGERPRINT := POCO/moonstone_p_global/moonstone:14/UKQ1.231003.002/V816.0.3.0.UMPMIXM:user/release-keys
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="moonstone-user 13 TKQ1.221114.001 V14.0.5.0.TMPMIXM release-keys"
-
-BUILD_FINGERPRINT := POCO/moonstone_p_global/moonstone:13/TKQ1.221114.001/V14.0.5.0.TMPMIXM:user/release-keys
