@@ -809,6 +809,12 @@ vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/soundfx/libshoebox.so
 vendor/lib64/soundfx/libmisoundfx.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
+vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcreverb.so
+vendor/lib64/soundfx/libqcvirt.so
 
 # Audio - from cheetah-user 14 UP1A.231105.003 11010452 release-keys
 vendor/lib/soundfx/libspatialaudio.so
