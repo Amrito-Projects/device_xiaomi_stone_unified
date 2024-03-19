@@ -62,6 +62,9 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 HWUI_COMPILE_FOR_PERF := true
 USE_OPENGL_RENDERER := true
 
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 
