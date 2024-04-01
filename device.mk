@@ -330,6 +330,9 @@ PRODUCT_PACKAGES += \
     libstagefright_foundation \
     libstagefright_softomx.vendor
 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 # Mlipay
 PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.mlipay@1.0.vendor \
