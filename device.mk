@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+# A/B
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Call the MiuiCamera setup
 $(call inherit-product-if-exists, vendor/xiaomi/stone-miuicamera/products/miuicamera.mk)
@@ -32,11 +34,6 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-# A/B
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
-# APEX's
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # ART
 ART_BUILD_TARGET_NDEBUG := true
@@ -387,7 +384,7 @@ PRODUCT_PACKAGES += \
     StoneGLSettingsProviderOverlay\
     StoneGLWifiOverlay \
     StoneINSettingsProviderOverlay \
-    StoneINWifiOverlay
+    StoneINWifiOverlay \
     ApertureOverlay \
     ApertureQRScannerOverlay
 
