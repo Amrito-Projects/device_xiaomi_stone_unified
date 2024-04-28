@@ -246,6 +246,7 @@ debug.sf.disable_client_composition_cache=1
 debug.sf.enable_egl_image_tracker=1
 debug.hwui.skia_atrace_enabled=false
 debug.renderengine.backend=skiaglthreaded
+ro.config.avoid_gfx_accel=true
 debug.hwui.renderer=skiagl
 renderthread.skia.reduceopstasksplitting=true
 debug.egl.hw=0
