@@ -1,7 +1,5 @@
 # Unpinned blobs from missi_phoneext4_global-user 14 UKQ1.231003.002 V816.0.3.0.UMPMIXM release-keys
 
-# All unpinned blobs below are extracted from miui_MOONSTONEGlobal_V14.0.4.0.TMPMIXM_b496aa7124_13.0
-
 # ADSP
 vendor/bin/adsprpcd
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
@@ -279,6 +277,12 @@ vendor/lib64/libvidhance.so
 vendor/lib64/libvidhance_ldc.so
 vendor/lib64/libvidhance_stabilizer.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+
+
+# Camera (Required For Lecia Cam) 
+vendor/lib64/libHalSuperSensorServer.so
+vendor/lib64/libSuperSensor.so
+vendor/lib64/libSuperSensorCPU.so
 
 # Camera arcsoft
 vendor/lib64/libarcsoft_beautyshot.so
