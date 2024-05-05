@@ -2,7 +2,7 @@ echo "Cloning required stuffs..."
 
 echo "Cloning Prebuilt Kernel..."
 #Prebuilt Kernel 
-git clone --depth=1 https://github.com/Amrito-Projects/device_xiaomi_stone-kernel.git -b 13 device/xiaomi/stone-kernel
+git clone --depth=1 https://github.com/Amrito-Projects/device_xiaomi_stone-kernel.git -b 13-p device/xiaomi/stone-kernel
 
 echo "Cloning Kernel..."
 # Kernel
