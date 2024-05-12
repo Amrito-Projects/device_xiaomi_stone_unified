@@ -187,6 +187,7 @@ persist.device_config.activity_manager.use_compaction=true
 # SoC
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SM6375
+ro.boot.product.vendor.sku=holi
 
 # Crypto
 ro.crypto.dm_default_key.options_format.version=2
