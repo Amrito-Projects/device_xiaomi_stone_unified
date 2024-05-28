@@ -9,17 +9,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/everest/config/common_full_phone.mk)
 
 # Inherit from stone device
 $(call inherit-product, device/xiaomi/stone/device.mk)
 
 # Device props
-TARGET_SUPPORTS_BLUR := true
+TARGET_SUPPORTS_BLUR := false
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_DISABLE_EPPE := true
 TARGET_DEBLOAT := true
+EVEREST_BUILD_TYPE := OFFICIAL
+EVEREST_MAINTAINER := TAKI
+WITH_GAPPS := true
+TARGET_INCLUDE_PIXEL_LAUNCHER := false
 
 # Charging Animation
 TARGET_USE_PIXEL_CHARGER := true
