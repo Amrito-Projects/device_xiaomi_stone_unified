@@ -177,6 +177,7 @@ camera.disable_zsl_mode=true
 persist.vendor.camera.logInfoMask=false
 vendor.camera.hal1.packagelist=com.whatsapp,com.whatsapp.w4b,com.facebook.orca,com.instagram.android
 persist.vendor.camera.perflock.enable=0
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
 # Charger
 persist.vendor.charge.oneTrack=true
