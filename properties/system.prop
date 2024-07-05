@@ -62,6 +62,9 @@ persist.log.tag.QC-time-services=S
 persist.log.tag.ResourcesCompat=S
 persist.log.tag.SYNX-UMD=S
 persist.log.tag.ultrasound_extn=S
+persist.log.tag.BatteryManagerService=S
+persist.log.tag.BatteryService=S
+persist.log.tag.BatteryStats=S
 
 # Logs
 persist.log.tag.AnalyticsService=S
