@@ -15,7 +15,3 @@ git clone https://github.com/Amrito-Projects/vendor_xiaomi_stone_unified.git ven
 echo "Cloning hardware related stuff..."
 # Hardware
 git clone --depth=1 https://github.com/LineageOS/android_hardware_xiaomi hardware/xiaomi
-
-echo "Cloning Viper4fx..."
-# VIPER4FX
-git clone --depth=1 https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git -b v4a packages/apps/ViPER4AndroidFX
