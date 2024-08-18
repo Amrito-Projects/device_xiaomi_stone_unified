@@ -15,3 +15,6 @@ git clone https://github.com/Amrito-Projects/vendor_xiaomi_stone_unified.git ven
 echo "Cloning hardware related stuff..."
 # Hardware
 git clone --depth=1 https://github.com/LineageOS/android_hardware_xiaomi hardware/xiaomi
+
+echo "Cloning Dolby related stuff..."
+git clone --depth=1 https://github.com/Amrito-Projects/vendor_motorola_dolby.git vendor/dolby
